@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DF292035-B9E3-481D-8A93-37E99BB5927D}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>LabWork6</RootNamespace>
-    <AssemblyName>LabWork6</AssemblyName>
+    <ProjectGuid>{E0FBF409-3F02-4889-A62B-C8075BB6707A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ComputerGraphics</RootNamespace>
+    <AssemblyName>ComputerGraphics</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -35,48 +33,43 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Figures\Cube.cs" />
+    <Compile Include="Figures\Figure.cs" />
+    <Compile Include="Figures\HexagonalPrism.cs" />
+    <Compile Include="Figures\Octahedron.cs" />
+    <Compile Include="Figures\Square.cs" />
+    <Compile Include="Line.cs" />
+    <Compile Include="LineParameters.cs" />
+    <Compile Include="ComputerGraphicsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComputerGraphicsForm.Designer.cs">
+      <DependentUpon>ComputerGraphicsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plane.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
+    <Compile Include="Services\DrawingService.cs" />
+    <Compile Include="TransformationMatrices\DisplacementMatrix.cs" />
+    <Compile Include="TransformationMatrices\ITransformationMatrix.cs" />
+    <Compile Include="TransformationMatrices\RotationMatrix.cs" />
+    <Compile Include="TransformationMatrices\ResizeMatrix.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ComputerGraphicsForm.resx">
+      <DependentUpon>ComputerGraphicsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ComputerGraphics\ComputerGraphics.csproj">
-      <Project>{e0fbf409-3f02-4889-a62b-c8075bb6707a}</Project>
-      <Name>ComputerGraphics</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
