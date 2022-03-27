@@ -3,6 +3,8 @@
     using System.Collections.Generic;
     using System.Drawing;
 
+    using ComputerGraphics;
+
     public class Axes
     {
         #region Properties

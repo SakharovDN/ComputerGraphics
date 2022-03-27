@@ -1,22 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace LabWork6
+﻿namespace LabWork6
 {
-    static class Program
+    using System;
+    using System.Windows.Forms;
+
+    using ComputerGraphics;
+
+    internal static class Program
     {
+        #region Methods
+
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new ComputerGraphicsForm());
         }
+
+        #endregion
     }
 }
