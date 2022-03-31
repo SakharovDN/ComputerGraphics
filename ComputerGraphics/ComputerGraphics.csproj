@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Figures\Cube.cs" />
     <Compile Include="Figures\Figure.cs" />
+    <Compile Include="Figures\Function.cs" />
     <Compile Include="Figures\HexagonalPrism.cs" />
     <Compile Include="Figures\Octahedron.cs" />
     <Compile Include="Figures\Square.cs" />

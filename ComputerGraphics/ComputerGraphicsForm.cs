@@ -42,7 +42,8 @@
                 nameof(Cube),
                 nameof(Square),
                 nameof(HexagonalPrism),
-                nameof(Octahedron)
+                nameof(Octahedron),
+                nameof(Function)
             };
             figureComboBox.DataSource = figures;
             _figure = new Cube();
@@ -57,7 +58,14 @@
 
         protected void Draw()
         {
-            pictureBox.Image = _drawingService.Draw(_figure);
+            try
+            {
+                pictureBox.Image = _drawingService.Draw(_figure);
+            }
+            catch
+            {
+                // ignored
+            }
         }
 
         private void RotateX(object sender, ElapsedEventArgs e)
@@ -175,6 +183,10 @@
 
                 case "HexagonalPrism":
                     _figure = new HexagonalPrism();
+                    break;
+
+                case "Function":
+                    _figure = new Function();
                     break;
             }
 
